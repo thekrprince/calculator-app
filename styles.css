@@ -26,20 +26,17 @@
 }
 
 /* output section */
-.answer {
+.output {
   position: relative;
   width: 80%;
   height: 30%;
   margin: 2rem auto 0;
   color: #cacaca;
-}
-
-/* Output text styling */
-.answer p {
-  position: absolute;
-  right: 0;
-  padding: 0 5px;
-  font-size: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  word-wrap: break-word;
+  word-break: break-all;
 }
 
 /* Button section */
@@ -64,36 +61,4 @@ button {
 
 button:hover {
   background: #303030;
-}
-
-/* Symbol button styling */
-.calc-numbers {
-  background-color: #271364;
-  border: 2px solid #271364;
-  color: #7e57c2;
-}
-
-.calc-numbers:hover {
-  background: #361e7e;
-}
-
-/* Equal button styling */
-.equal {
-  background-color: #004d40;
-  border: 2px solid #004d40;
-}
-
-.equal:hover {
-  background-color: #005f4f;
-}
-
-/* Extra buttons styling */
-.extra {
-  background-color: #271364;
-  border: 2px solid #271364;
-  color: #7e57c2;
-}
-
-.extra:hover {
-  background-color: #361e7e;
 }
