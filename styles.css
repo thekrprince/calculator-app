@@ -62,9 +62,38 @@ button {
   color: #8a8585;
 }
 
-/* Symbol styling */
+button:hover {
+  background: #303030;
+}
+
+/* Symbol button styling */
 .calc-numbers {
   background-color: #271364;
-  border: #2f1a6d;
+  border: 2px solid #271364;
   color: #7e57c2;
+}
+
+.calc-numbers:hover {
+  background: #361e7e;
+}
+
+/* Equal button styling */
+.equal {
+  background-color: #004d40;
+  border: 2px solid #004d40;
+}
+
+.equal:hover {
+  background-color: #005f4f;
+}
+
+/* Extra buttons styling */
+.extra {
+  background-color: #271364;
+  border: 2px solid #271364;
+  color: #7e57c2;
+}
+
+.extra:hover {
+  background-color: #361e7e;
 }
