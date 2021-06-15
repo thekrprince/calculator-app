@@ -19,46 +19,95 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 22em;
-  height: 35rem;
+  width: 22rem;
+  min-height: 35rem;
   background-image: linear-gradient(to bottom, #333333, #1a1a1a);
-  border-radius: 2rem;
+  /* border-radius: 2rem; */
 }
 
 /* output section */
 .output {
   position: relative;
   width: 80%;
-  height: 30%;
+  min-height: 20vh;
   margin: 2rem auto 0;
   color: #cacaca;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  align-items: flex-end;
   word-wrap: break-word;
   word-break: break-all;
+}
+
+.current-operand {
+  font-size: 40px;
 }
 
 /* Button section */
 .buttons {
   width: 80%;
   height: 60%;
-  margin: 5px auto 0;
+  margin: 5px auto 10px;
 }
 
 /* All Buttons styling */
 button {
-  width: 4.18rem;
+  width: 4rem;
   height: 3.8rem;
   margin: 4px 0;
   cursor: pointer;
   border: 2px solid #161616;
-  border-radius: 45%;
   background: #1a1a1a;
   box-shadow: 2.91px 2.91px 5px #383838, -2.91px -2.91px 5px #424242;
   color: #8a8585;
 }
 
+.btn {
+  display: grid;
+  grid-template-columns: repeat(4, 82px);
+  grid-template-rows: minmax(80px, auto) repeat(4, 80px);
+}
+
+.span-two {
+  grid-column: span 2;
+  width: 8.5rem;
+}
+
 button:hover {
   background: #303030;
+}
+
+/* Media Queries */
+@media screen and (max-height: 700px) {
+  button {
+    width: 3rem;
+    height: 3.5rem;
+    margin: 3px 0;
+  }
+
+  .btn {
+    grid-template-columns: repeat(4, 68px);
+    grid-template-rows: minmax(50px, auto) repeat(4, 58px);
+  }
+
+  .span-two {
+    grid-column: span 2;
+    width: 6.8rem;
+  }
+
+  .calc {
+    width: 18rem;
+    min-height: 30rem;
+    background-image: linear-gradient(to bottom, #333333, #1a1a1a);
+    border-radius: 5px;
+  }
+
+  button {
+    height: 3rem;
+  }
+
+  .output {
+    min-height: 30vh;
+  }
 }

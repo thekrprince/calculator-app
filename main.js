@@ -5,21 +5,25 @@ class Calculator {
     this.clear();
   }
 
+  // Clear output
   clear() {
     this.currentOperand = '';
     this.previousOperand = '';
     this.operation = undefined;
   }
 
+  // Delete output text 1 by 1
   delete() {
     this.currentOperand = this.currentOperand.toString().slice(0, -1);
   }
 
+  // Append number
   appendNumber(number) {
     if (number === '.' && this.currentOperand.includes('.')) return;
     this.currentOperand = this.currentOperand.toString() + number.toString();
   }
 
+  // Select operation to perform
   selectOperation(operation) {
     if (this.currentOperand === '') return;
     if (this.previousOperand !== '') {
@@ -30,6 +34,7 @@ class Calculator {
     this.currentOperand = '';
   }
 
+  // Calculation expression
   compute() {
     let computation;
     const prev = parseFloat(this.previousOperand);
@@ -57,9 +62,34 @@ class Calculator {
     this.previousOperand = '';
   }
 
+  getDisplayNumber(number) {
+    const stringNumber = number.toString();
+    const integerDigits = parseFloat(stringNumber.split('.')[0]);
+    const decimalDigits = stringNumber.split('.')[1];
+    let integerDisplay;
+    if (isNaN(integerDigits)) {
+      integerDisplay = '';
+    } else {
+      integerDisplay = integerDigits.toLocaleString('en', {
+        maximumFractionDigits: 0,
+      });
+    }
+    if (decimalDigits != null) {
+      return `${integerDisplay}.${decimalDigits}`;
+    } else {
+      return integerDisplay;
+    }
+  }
+
   updateDisplay() {
-    this.currentOperandText.innerText = this.currentOperand;
-    this.previousOperandText.innerText = this.previousOperand;
+    this.currentOperandText.innerText = this.getDisplayNumber(
+      this.currentOperand
+    );
+    if (this.operation != null) {
+      this.previousOperandText.innerText = `${this.previousOperand} ${this.operation}`;
+    } else {
+      this.previousOperandText.innerText = '';
+    }
   }
 }
 
